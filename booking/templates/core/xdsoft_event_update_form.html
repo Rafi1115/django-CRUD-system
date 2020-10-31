@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_filters static %}
+
+{% block extra_head %}
+  <!-- XDSoft DateTimePicker -->
+  <link rel="stylesheet" href="{% static 'vendor/datetimepicker-2.5.20/jquery.datetimepicker.min.css' %}">
+  <script src="{% static 'vendor/datetimepicker-2.5.20/jquery.datetimepicker.full.min.js' %}"></script>
+{% endblock %}
+
+
+
+{% block content %}
+{{ form.media }}
+  <h1>This is update form</h1>
+<form action="{% url 'booking:book-update' object.pk %}" method="post">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button type="submit" class="btn btn-success"><strong>UPDATE</strong></button>
+</form>
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+{% comment %}
+  
+{% block content %}
+  
+  <form action="{% url 'booking:book-create' %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success"><strong>BOOK NOW</strong></button>
+  </form>
+{% endblock %}
+
+{% endcomment %}
+

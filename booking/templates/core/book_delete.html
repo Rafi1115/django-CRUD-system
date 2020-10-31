@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+  
+<main role="main">
+    <div class="album py-5 bg-danger">
+      <div class="container">
+        <div class="card text-left">
+          <div class="card-header">
+            <h4>Delete Section</h4>
+          </div>
+          <div class="card-body text-dark">
+           
+            <h2 class="text-primary">{{ object.ouruser.user|upper }}!</h2>
+            <h3> Are you really wants to delete ?</h3>
+            <h4 class="text-warning">This action cannot be undone</h4>
+
+      <form action="{% url 'booking:book-delete' object.pk %}" method="POST">
+                {% csrf_token %}
+            <div class="btn-group">
+          <button type="submit" class="btn btn-danger" value="Delete">Delete</button>
+        </div>
+                
+      </form>
+
+        
+        </div>
+       
+        </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+
+
+{% comment %}
+
+
+
+
+
+{% endcomment %}
+{% endblock content %}

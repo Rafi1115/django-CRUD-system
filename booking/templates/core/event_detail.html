@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<main role="main">
+  <div class="album py-5 bg-info">
+    <div class="container">
+      <div class="card text-left">
+        <div class="card-header">
+          <h4>Details Section</h4>
+        </div>
+        <div class="card-body text-dark">
+         
+          <p class="card-text"><strong>Name:</strong> {{object.name}}</p>
+          <p class="card-text"> <strong>Email:</strong>  {{object.email}}</p>
+          <p class="card-text"> <strong>Phone:</strong>  {{object.phone}}</p>
+          <p class="card-text"> <strong>Pickup:</strong>  {{object.pickup}}</p>
+          <p class="card-text"> <strong>Content:</strong>  {{object.content|safe}}</p>
+          <p class="card-text"> <strong>Destinaton:</strong>  {{object.destination}}</p>
+          <p class="card-text"> <strong>Date & Time:</strong>  {{object.date}}</p>
+          <div class="btn-group">
+           <a href="{{object.get_update_url}}"><button type="button" class="btn btn-sm btn-outline-info">Update</button></a>
+           </div>
+           <a href="{{object.get_delete_url}}"><button type="button" class="btn btn-sm btn-outline-danger">Delete</button></a> 
+          </div>
+        </div>
+     
+      </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+{% comment %}
+<h2>{{ object.name }}</h2>
+<p class="text-muted">{{ object.date }}</p>
+
+
+<a href="{{object.get_update_url}}">Edit this thing</a>
+<a href="{% url 'booking:book-delete' object.pk %}">delete</a>
+{% endcomment %}
+
+
+
+
+{% endblock %}

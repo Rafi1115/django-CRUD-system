@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <ul >
+    {% for book in  book %}
+    <li class="list-group">
+      <h2>
+        {{ forloop.counter }}|
+        <a  class="text-secondary" href="{{book.get_absolute_url}}">{{book.name}}</a>
+   
+      </h2>
+    </li>
+    
+    {% endfor %}
+
+    <h3>
+        <a class="btn btn-warning" href="{% url 'booking:book-create' %}"> Booking </a>
+    </h3>
+
+  </ul>
+{% endblock %}
