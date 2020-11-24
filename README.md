@@ -5,10 +5,10 @@ all most are class based view...
 
 smiply type in your terminal .. 
 
-Pipenv Shell acitve vituralenv 
+"Pipenv Shell" to acitve vituralenv 
 
 then .....
 
-pip install requirements.txt 
+"pip install -r requirements.txt"
 
-Enjoy...:)
+Have a good day...:)
